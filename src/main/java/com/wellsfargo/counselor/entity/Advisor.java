@@ -4,26 +4,25 @@ package com.wellsfargo.counselor.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "advisors")
 public class Advisor {
 
     @Id
     @GeneratedValue()
     private long advisorId;
 
-    @Column(nullable = false,name = "first_name")
+    @Column(nullable = false)
     private String firstName;
 
-    @Column(nullable = false,name =  "last_name")
+    @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false,name = "address")
+    @Column(nullable = false)
     private String address;
 
-    @Column(nullable = false,name = "phone")
+    @Column(nullable = false)
     private String phone;
 
-    @Column(nullable = false,name = "email")
+    @Column(nullable = false)
     private String email;
 
     protected Advisor() {

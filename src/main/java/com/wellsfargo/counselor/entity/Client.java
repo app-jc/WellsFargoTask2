@@ -3,29 +3,25 @@ package com.wellsfargo.counselor.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "clients")
 public class Client {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "client_id")
+    @GeneratedValue()
     private Long clientId;
 
-    @Column(name = "name")
+    @Column(nullable = false)
     private String name;
 
-    @Column(name = "address")
+    @Column(nullable = false)
     private String address;
 
-    @Column(name = "phone")
+    @Column(nullable = false)
     private String phone;
 
     @ManyToOne
-    @JoinColumn(name = "advisor_id")
     private Advisor advisor;
 
-    // Constructors
-    public Client() {
+    protected Client() {
     }
 
     public Client(String name, String address, String phone, Advisor advisor) {
@@ -35,7 +31,6 @@ public class Client {
         this.advisor = advisor;
     }
 
-    // Getters and Setters
     public Long getClientId() {
         return clientId;
     }

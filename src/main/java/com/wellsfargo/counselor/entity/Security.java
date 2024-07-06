@@ -12,30 +12,27 @@ public class Security {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "security_id")
     private Long securityId;
 
-    @Column(name = "name")
+    @Column(nullable = false)
     private String name;
 
-    @Column(name = "category")
+    @Column(nullable = false)
     private String category;
 
-    @Column(name = "purchase_date")
+    @Column(nullable = false)
     private Date purchaseDate;
 
-    @Column(name = "purchase_price")
+    @Column(nullable = false)
     private Double purchasePrice;
 
-    @Column(name = "quantity")
+    @Column(nullable = false)
     private Integer quantity;
 
     @ManyToOne
-    @JoinColumn(name = "portfolio_id")
     private Portfolio portfolio;
 
-    // Constructors
-    public Security() {
+    protected Security() {
     }
 
     public Security(String name, String category, Date purchaseDate, Double purchasePrice, Integer quantity, Portfolio portfolio) {
